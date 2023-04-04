@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #imageGallery {
+        width: 500px;
+        height: 300px;
+        position: relative;
+      }
+      #imageGallery img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s;
+      }
+      #imageGallery img.active {
+        opacity: 1;
+      }
+
+      #timer {
+        font-size: 24px;
+        margin-top: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="imageGallery">
+      <img src="image1.jpg" />
+      <img src="image2.jpg" />
+      <img src="image3.jpg" />
+      <img src="image4.jpg" />
+      <img src="image5.jpg" />
+    </div>
+    <div id="timer"></div>
+
+    <script>
+      const imageGallery = document.querySelector("#imageGallery");
+      const images = imageGallery.querySelectorAll("img");
+      const timer = document.querySelector("#timer");
+
+      let currentImageIndex = 0;
+      let countdown = 10;
+      let timerId;
+
+      function showNextImage() {
+        images[currentImageIndex].classList.remove("active");
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        images[currentImageIndex].classList.add("active");
+      }
+
+      function startTimer() {
+        timerId = setInterval(() => {
+          countdown--;
+          timer.textContent = countdown;
+          if (countdown === 0) {
+            showNextImage();
+            countdown = 5;
+          }
+        }, 1000);
+      }
+
+      startTimer();
+    </script>
+  </body>
+</html>
