@@ -1,6 +1,6 @@
 # JavaScriptWebAssignment
 
-Leader borad Project: https://jjeerryyy28.github.io/JavaScriptWebAssignment/Assignment13/index.html
+Day 11 -> Leader board Project: https://jjeerryyy28.github.io/JavaScriptWebAssignment/Assignment13/index.html
 
 Event Add Listener: https://jjeerryyy28.github.io/JavaScriptWebAssignment/Assignment9/index.html
 #Assignment 9:
