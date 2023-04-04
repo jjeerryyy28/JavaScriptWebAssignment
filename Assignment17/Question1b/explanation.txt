@@ -1,0 +1,6 @@
+The location object and the history object are both part of the browser object model, 
+but they serve different purposes:
+The location object contains information about the current URL of the document and allows 
+you to navigate to other URLs. You can set the href property of the location object to load
+a new page or navigate to a new URL. For example, you could use the location object to redirect 
+the user to a different page on your website, or to an external website:

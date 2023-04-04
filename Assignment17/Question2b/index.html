@@ -1,0 +1,40 @@
+<!-- One example scenario where the navigator object would be used is to display a message 
+    or content specific to a particular browser or operating system. For instance, if a website 
+    has some features that are only compatible with certain browsers or operating systems, it can 
+    detect the user's browser and OS using the navigator object and display a message accordingly. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Navigator Object Example</title>
+  </head>
+  <body>
+    <p id="message"></p>
+
+    <script>
+      // Get the user's browser name and version
+      var browserName = navigator.appName;
+      var browserVersion = navigator.appVersion;
+
+      // Get the user's operating system
+      var osName = navigator.platform;
+
+      // Display a message based on the user's browser and operating system
+      if (browserName === "Microsoft Internet Explorer") {
+        document.getElementById("message").innerHTML =
+          "You are using Internet Explorer " + browserVersion + " on " + osName;
+      } else if (browserName === "Netscape") {
+        document.getElementById("message").innerHTML =
+          "You are using Netscape " + browserVersion + " on " + osName;
+      } else {
+        document.getElementById("message").innerHTML =
+          "You are using " +
+          browserName +
+          " " +
+          browserVersion +
+          " on " +
+          osName;
+      }
+    </script>
+  </body>
+</html>

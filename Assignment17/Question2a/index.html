@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Screen Info</title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/color-convert"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/window-size@1.1.1"></script>
+</head>
+<body>
+  <h1>Screen Info</h1>
+  <p>Width: <span id="width"></span> pixels</p>
+  <p>Height: <span id="height"></span> pixels</p>
+  <p>Color Depth: <span id="color-depth"></span></p>
+  <script type="text/javascript">
+    const windowSize = require('window-size');
+    const convert = require('color-convert');
+
+    const width = windowSize.width;
+    const height = windowSize.height;
+    const colorDepth = convert.depth();
+
+    document.getElementById('width').innerHTML = width;
+    document.getElementById('height').innerHTML = height;
+    document.getElementById('color-depth').innerHTML = colorDepth;
+  </script>
+</body>
+</html>
