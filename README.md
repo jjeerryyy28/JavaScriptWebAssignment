@@ -15,3 +15,5 @@ An example scenario where event bubbling would occur is when we have a dropdown 
 2b: Event propagation is the process by which events are handled by multiple elements in the DOM hierarchy. When an event is triggered on an element, it can be handled by that element, its parent elements, and the document object itself. This is known as event propagation or event bubbling.
 
 Assignment 10 => https://jjeerryyy28.github.io/JavaScriptWebAssignment/Assignment10/index.html
+
+Assignment 14 => https://jjeerryyy28.github.io/JavaScriptWebAssignment/Assignment14/index.html
