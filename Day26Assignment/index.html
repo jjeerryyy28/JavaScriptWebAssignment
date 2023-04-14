@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Extract Book Title and Author</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>Extract Book Title and Author</h1>
+  <p>Open the developer console to see the result.</p>
+
+  <script>
+    function extractTitleAndAuthor(books, ...restArgs) {
+      const newBooks = books.map(({title, author}) => ({title, author}));
+      console.log(...newBooks, ...restArgs);
+    }
+
+    // Example usage
+    const books = [
+      {title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925},
+      {title: 'To Kill a Mockingbird', author: 'Harper Lee', year: 1960},
+      {title: '1984', author: 'George Orwell', year: 1949}
+    ];
+
+    extractTitleAndAuthor(books, 'Additional argument 1', 'Additional argument 2');
+  </script>
+</body>
+</html>
+
+
+<!-- The extractTitleAndAuthor function takes an array of objects called books as its parameter and uses the rest parameter (...restArgs) to capture any additional arguments passed to the function.
+It then uses array destructuring to extract the title and author properties from each object in the books array.
+It uses arrow functions and the map method to create a new array of objects that only contain the title and author properties.
+Finally, it uses the spread operator (...) to pass the new array of objects and any additional arguments to a console.log statement.
+The example usage creates an array of books and calls the extractTitleAndAuthor function with the books array and two additional arguments.
+
+Difference between normal functions and arrow functions:
+
+Normal functions have their own this keyword, while arrow functions inherit the this keyword from their parent scope.
+Arrow functions have a shorter syntax and are more concise than normal functions, making them easier to read and write.
+Arrow functions cannot be used as constructors and do not have their own arguments object. -->
