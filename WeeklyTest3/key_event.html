@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Keyboard Events</title>
+    <style>
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      #inputBox {
+        display: block;
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+        font-size: 24px;
+        text-align: center;
+        width: 400px;
+        height: 50px;
+        background-color: #fff;
+        box-shadow: 0px 0px 5px #ccc;
+        color: #333;
+        outline: none;
+        display: none;
+      }
+      #messageBox {
+        display: block;
+        width: 500px;
+        height: 100px;
+        font-size: 32px;
+        text-align: center;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        padding-top: 30px;
+        background-color: #f5f5f5;
+        box-shadow: 0px 0px 5px #ccc;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      #keyCode {
+        display: block;
+        color: #666;
+        background-color: #f5f5f5;
+        box-shadow: 0px 0px 5px #ccc;
+        border-radius: 5px;
+        color: #5bbc7a;
+        font-size: 100px
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <input
+        type="text"
+        id="inputBox"
+        placeholder="Press any key to get the keycode"
+      />
+      <div id="messageBox">Press any key to get the keycode</div>
+      <div id="keyCode"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
