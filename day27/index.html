@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DAY 27</title>
+  </head>
+  <body>
+    <script>
+      // Exercise 1:
+      localStorage.setItem("firstName", "Prajwal");
+      localStorage.setItem("lastName", "Nikhar");
+      localStorage.setItem("age", "23");
+      localStorage.setItem("country", "India");
+      localStorage.setItem("city", "Nagpur");
+
+      const firstName = console.log(localStorage.getItem("firstName"));
+      const lastName = console.log(localStorage.getItem("lastName"));
+      const age = console.log(localStorage.getItem("age"));
+      const country = console.log(localStorage.getItem("country"));
+      const city = console.log(localStorage.getItem("city"));
+
+      //Exercise 2:
+      const student = {
+        firstName: "Prajwal",
+        lastName: "Nikhar",
+        age: 23,
+        skills: ["JavaScript", "HTML", "CSS"],
+        country: "India",
+        enrolled: true,
+      };
+
+      const studentString = JSON.stringify(student);
+      localStorage.setItem("student", studentString);
+
+      const storedStudentString = localStorage.getItem("student");
+      const storedStudent = JSON.parse(storedStudentString);
+      console.log(storedStudent);
+
+      //Exercise 3:
+      let personAccount = {
+        firstName: "Prajwal",
+        lastName: "Nikhar",
+        incomes: [
+          { description: "Salary", amount: 5000 },
+          { description: "Bonus", amount: 1000 },
+        ],
+        expenses: [
+          { description: "Rent", amount: 2000 },
+          { description: "Groceries", amount: 500 },
+        ],
+        totalIncome: function () {
+          let total = 0;
+          for (let i = 0; i < this.incomes.length; i++) {
+            total += this.incomes[i].amount;
+          }
+          return total;
+        },
+        totalExpense: function () {
+          let total = 0;
+          for (let i = 0; i < this.expenses.length; i++) {
+            total += this.expenses[i].amount;
+          }
+          return total;
+        },
+        accountInfo: function () {
+          return `Account Information:\nName: ${this.firstName} ${
+            this.lastName
+          }\nIncome: ${this.totalIncome()}\nExpense: ${this.totalExpense()}`;
+        },
+        addIncome: function (description, amount) {
+          this.incomes.push({ description: description, amount: amount });
+        },
+        addExpense: function (description, amount) {
+          this.expenses.push({ description: description, amount: amount });
+        },
+        accountBalance: function () {
+          return `Account Balance: ${this.totalIncome() - this.totalExpense()}`;
+        },
+      };
+
+      console.log(personAccount.accountInfo());
+      personAccount.addIncome("Other work", 1000);
+      console.log(personAccount.totalIncome());
+      personAccount.addExpense("Shoes", 3000);
+      console.log(personAccount.accountBalance());
+    </script>
+  </body>
+</html>
